@@ -40,10 +40,21 @@ class FurnitureDetailViewController: UIViewController {
     
     @IBAction func choosePhotoButtonTapped(_ sender: Any) {
         
+        // User to make a selection or use an existing photo
+        print("Photo")
+        let alertController = UIAlertController(title: nil, message: "Test Message", preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: {action in print("User Selected camera action")})
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(cameraAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
 
     @IBAction func actionButtonTapped(_ sender: Any) {
-        
+        print("where")
     }
     
 }
